@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>Lotto & Partnership</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,24 +12,26 @@
     </div>
     
     <div class="main-wrapper">
+        <!-- Lotto Generator Section -->
         <div class="container lotto-section">
             <h1>Lotto Number Generator</h1>
             <button id="generator-btn">Generate Numbers</button>
             <div id="lotto-numbers-container"></div>
         </div>
 
+        <!-- Partnership Inquiry Form Section -->
         <div class="container contact-section">
             <h2>Partnership Inquiry</h2>
             <form action="https://formspree.io/f/xnjgpeyk" method="POST">
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Briefly describe your partnership proposal..." required></textarea>
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your proposal..." required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Send Inquiry</button>
+                <button type="submit" class="submit-btn">Send Proposal</button>
             </form>
         </div>
     </div>
