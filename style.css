@@ -6,6 +6,7 @@
     --btn-text: #ffffff;
     --input-border: #d1d8e0;
     --input-bg: #fdfdfd;
+    --bar-bg: #ecf0f1;
 }
 
 body.dark-mode {
@@ -16,6 +17,7 @@ body.dark-mode {
     --btn-text: #ffffff;
     --input-border: #333333;
     --input-bg: #2d2d2d;
+    --bar-bg: #333333;
 }
 
 body {
@@ -112,6 +114,51 @@ h1, h2 {
 @keyframes popIn {
     0% { transform: scale(0); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
+}
+
+/* Animal Test Styles */
+.file-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    margin: 15px 0;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.result-label {
+    width: 70px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.result-bar-bg {
+    flex-grow: 1;
+    height: 14px;
+    background-color: var(--bar-bg);
+    margin: 0 10px;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.result-bar-fill {
+    height: 100%;
+    background-color: var(--btn-bg);
+    transition: width 0.5s ease-out;
+}
+
+.result-percent {
+    width: 50px;
+    text-align: right;
+    font-size: 0.9rem;
 }
 
 /* Form Styles */
