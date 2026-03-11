@@ -1,41 +1,73 @@
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --container-bg: #fff;
+    --btn-bg: #4CAF50;
+    --btn-text: #fff;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --container-bg: #2d2d2d;
+    --btn-bg: #45a049;
+    --btn-text: #fff;
+}
+
 body {
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
     text-align: center;
+    background-color: var(--container-bg);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.theme-toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-toggle {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 1px solid var(--text-color);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--text-color);
+    font-weight: bold;
 }
 
 #generator-btn {
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 1.2rem;
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
     margin-bottom: 20px;
+    transition: background-color 0.3s;
 }
 
 #lotto-numbers-container {
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 lotto-ball {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
+    margin: 5px;
 }
