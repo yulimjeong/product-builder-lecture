@@ -1,12 +1,19 @@
 class LottoBall extends HTMLElement {
     constructor() {
         super();
-        const shadow = this.attachShadow({ mode: 'open' });
-        const wrapper = document.createElement('div');
-        const number = this.getAttribute('number');
-        wrapper.textContent = number;
+        this.attachShadow({ mode: 'open' });
+    }
 
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
+        const number = this.getAttribute('number');
         const color = this.getColor(number);
+        
+        const wrapper = document.createElement('div');
+        wrapper.textContent = number;
         wrapper.style.backgroundColor = color;
         
         const style = document.createElement('style');
@@ -23,8 +30,10 @@ class LottoBall extends HTMLElement {
                 color: white;
             }
         `;
-        shadow.appendChild(style);
-        shadow.appendChild(wrapper);
+        
+        this.shadowRoot.innerHTML = '';
+        this.shadowRoot.appendChild(style);
+        this.shadowRoot.appendChild(wrapper);
     }
 
     getColor(number) {
