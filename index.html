@@ -6,42 +6,57 @@
     <meta name="google-adsense-account" content="ca-pub-6299347743508819">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6299347743508819"
      crossorigin="anonymous"></script>
-    <title>Lotto & Animal Similarity Test</title>
+    <title>Lotto & Animal Similarity Test - AI Powered Tools</title>
     <link rel="stylesheet" href="style.css">
     <!-- TensorFlow & Teachable Machine Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
-    <div class="theme-toggle-container">
-        <button id="theme-toggle">Dark Mode</button>
-    </div>
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="#lotto-section">Lotto Generator</a>
+            <a href="#animal-test-section">Animal Test</a>
+            <a href="#contact-section">Partnership</a>
+        </div>
+        <div class="theme-toggle-container">
+            <button id="theme-toggle">🌙 Dark Mode</button>
+        </div>
+    </header>
     
     <div class="main-wrapper">
+        <!-- Hero Section for AdSense Quality -->
+        <section class="hero-text container">
+            <h1>Expert AI Tools & Number Generators</h1>
+            <p>Welcome to our high-quality interactive platform. We provide data-driven lottery number generation and modern AI image classification tools to help you find fun and unique insights.</p>
+        </section>
+
         <!-- Lotto Generator Section -->
-        <div class="container lotto-section">
-            <h1>Lotto Number Generator</h1>
+        <section id="lotto-section" class="container lotto-section">
+            <h2>Lotto Number Generator</h2>
+            <p>Our generator uses standard probability randomization algorithms to help you choose your next set of potential winning numbers. Simply click the button below to generate 6 random numbers (1-45).</p>
             <button id="generator-btn">Generate Numbers</button>
             <div id="lotto-numbers-container"></div>
-        </div>
+        </section>
 
         <!-- Animal Similarity Test Section -->
-        <div class="container animal-test-section">
-            <h2>Animal Similarity Test</h2>
-            <p>Upload a photo of a dog or cat to see the AI's prediction!</p>
+        <section id="animal-test-section" class="container animal-test-section">
+            <h2>Animal Similarity Test (AI)</h2>
+            <p>Using Google's Teachable Machine and TensorFlow.js, our AI can predict whether you resemble a dog or a cat based on facial features. Your privacy is guaranteed as all processing happens directly in your browser.</p>
             <div class="upload-area">
                 <input type="file" id="image-upload" accept="image/*" class="file-input">
             </div>
             <div id="image-preview">
-                <img id="face-image" src="" alt="Face Image" style="display:none; max-width:100%; border-radius:10px; margin: 20px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img id="face-image" src="" alt="Face Image Preview" style="display:none; max-width:100%; border-radius:10px; margin: 20px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
             </div>
             <div id="loading-msg" style="display:none; font-weight: bold; margin: 10px 0;">AI is analyzing...</div>
             <div id="label-container"></div>
-        </div>
+        </section>
 
         <!-- Partnership Inquiry Form Section -->
-        <div class="container contact-section">
+        <section id="contact-section" class="container contact-section">
             <h2>Partnership Inquiry</h2>
+            <p>Interested in collaborating or integrating our AI tools? Please send us a message below. We typically respond within 48 hours.</p>
             <form action="https://formspree.io/f/xnjgpeyk" method="POST">
                 <div class="form-group">
                     <label for="email">Your Email</label>
@@ -53,10 +68,11 @@
                 </div>
                 <button type="submit" class="submit-btn">Send Proposal</button>
             </form>
-        </div>
+        </section>
 
         <!-- Disqus Comment Section -->
-        <div class="container comment-section">
+        <section class="container comment-section">
+            <h3>Community Feedback</h3>
             <div id="disqus_thread"></div>
             <script>
                 (function() {
@@ -67,7 +83,15 @@
                 })();
             </script>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
+        </section>
+
+        <footer class="container footer">
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <p>&copy; 2026 Lotto & AI Tools. All rights reserved.</p>
+        </footer>
     </div>
 
     <script src="main.js"></script>

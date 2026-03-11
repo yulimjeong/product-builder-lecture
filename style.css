@@ -7,6 +7,7 @@
     --input-border: #d1d8e0;
     --input-bg: #fdfdfd;
     --bar-bg: #ecf0f1;
+    --nav-bg: #ffffff;
 }
 
 body.dark-mode {
@@ -18,27 +19,54 @@ body.dark-mode {
     --input-border: #333333;
     --input-bg: #2d2d2d;
     --bar-bg: #333333;
+    --nav-bg: #1e1e1e;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: all 0.3s ease;
     margin: 0;
-    padding: 20px;
+    padding-top: 80px; /* Space for fixed navbar */
+    line-height: 1.6;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: var(--nav-bg);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 15px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--btn-bg);
 }
 
 .main-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 450px;
+    gap: 30px;
+    width: 95%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 50px;
 }
 
 .container {
@@ -49,27 +77,38 @@ body {
     text-align: center;
 }
 
+.hero-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.05rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
 .theme-toggle-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+    display: flex;
+    align-items: center;
 }
 
 #theme-toggle {
-    padding: 10px 18px;
+    padding: 8px 14px;
     cursor: pointer;
-    border: 2px solid var(--text-color);
-    border-radius: 25px;
-    background: transparent;
+    border: 1px solid var(--input-border);
+    border-radius: 20px;
+    background: var(--input-bg);
     color: var(--text-color);
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     transition: 0.3s;
 }
 
-h1, h2 {
+h2 {
     margin-top: 0;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
 }
 
 #generator-btn {
@@ -85,9 +124,6 @@ h1, h2 {
     margin-bottom: 20px;
     transition: transform 0.1s, opacity 0.2s;
 }
-
-#generator-btn:hover { opacity: 0.9; }
-#generator-btn:active { transform: scale(0.98); }
 
 #lotto-numbers-container {
     display: flex;
@@ -152,13 +188,6 @@ h1, h2 {
 .result-bar-fill {
     height: 100%;
     background-color: var(--btn-bg);
-    transition: width 0.5s ease-out;
-}
-
-.result-percent {
-    width: 50px;
-    text-align: right;
-    font-size: 0.9rem;
 }
 
 /* Form Styles */
@@ -183,13 +212,6 @@ h1, h2 {
     background-color: var(--input-bg);
     color: var(--text-color);
     box-sizing: border-box;
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-.form-group textarea {
-    height: 80px;
-    resize: none;
 }
 
 .submit-btn {
@@ -202,7 +224,40 @@ h1, h2 {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.submit-btn:hover { opacity: 0.9; }
+/* Footer & Legal */
+.footer {
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: var(--text-color);
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.legal-page .container {
+    text-align: left;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.legal-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.legal-page h2 {
+    margin-top: 30px;
+    border-bottom: 2px solid var(--btn-bg);
+    padding-bottom: 5px;
+    display: inline-block;
+}
